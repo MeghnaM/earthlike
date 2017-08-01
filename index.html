@@ -1,15 +1,28 @@
 <!DOCTYPE html>
 <html>
    <head>
-      <title>Earthlike</title>
-      <link rel="stylesheet" type="text/css" href="assets/css/main.css"/>
+   <meta charset="utf-8">
    </head>
+
    <body>
-      <h1>Earthlike</h1>
+   <script src="https://d3js.org/d3.v4.min.js"></script>
+   <script src="https://unpkg.com/topojson@3"></script>
+   <script>
+   /** Math functions **/
+   var to_rad = Math.PI/180;
+   var to_deg = 180/Math.PI;
 
-   <!-- Scripts -->
-      <script src="assets/js/jquery.min.js"></script>
-      <script src="assets/js/main.js"></script>
+   function cross(u, v) {
+      return [ u[1] * v[2] - u[2] * v[1],
+               u[2] * v[0] - u[0] * v[2],
+               u[0] * v[1] - u[1] * v[0] ]
+   }
 
+   function dot(u, v) {
+      for (var i=0, sum=0; u.length > i; ++ i) sum += u[i] * v[i];
+      return sum;
+   }
+
+   </script>
    </body>
 </html>
